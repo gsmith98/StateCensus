@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+	<script src="us-map/lib/raphael.js"></script>
+	<script src="us-map/jquery.usmap.js"></script>
+	<script src="usdb.js"></script>
+        <link rel="stylesheet" type="text/css" href="usdb.css">
+
+</head>
+
+<body>
+	<div id="map-row">
+	    <div id="map" style="width: 600px; height: 550px;"></div>
+	    <div id="hover-div" style="width: 220px; height: 150px;">
+		<div class="hover-text" id="hover-state"> </div>
+		<div class="hover-text" id="hover-pop"> </div>
+		<div class="hover-text" id="hover-income"> </div>
+		<div class="hover-text" id="hover-age"> </div>
+		<div class="hover-text" id="hover-poverty"> </div>
+		<div class="hover-text" id="hover-unemployed"> </div>
+	    </div>
+	</div>
+	<div id="clicked-div">
+	     <div class="click-text" id="click-state">Click on a state to see its statistics</div>
+             <table id="state-table" style="width:90%">
+                <tr>
+                  <td id="r1"></td>
+                  <td id="r2"></td>		
+                  <td id="r3"></td>
+                </tr>
+                <tr>
+                  <td id="r4"></td>
+                  <td id="r5"></td>		
+                  <td id="r6"></td>
+                </tr>
+                <tr>
+                  <td id="r7"></td>
+                  <td id="r8"></td>		
+                  <td id="r9"></td>
+                </tr>
+		 <tr>
+                  <td id="r10"></td>
+                  <td id="r11"></td>		
+                  <td id="r12"></td>
+                </tr>
+                <tr>
+                  <td id="r13"></td>
+                  <td id="r14"></td>		
+                  <td id="r15"></td>
+                </tr>
+            </table>
+	</div>
+
+	<div id="builder-text"> Query Builder </div> 
+ 	<div id="query-builder">
+		<h5 class="select-text"> SELECT </h2>
+                <select id="query-selector">
+                    <option value="Name">Name</option>
+		    <option value="Population">Population</option>
+                    <option value="MedianIncome">Median Income</option>
+                    <option value="NumWhite">Number of Whites</option>
+                    <option value="NumBlack">Number of Blacks</option>
+                    <option value="NumHispanic">Number of Hispanics</option>
+                    <option value="NumAsian">Number of Asians</option>
+                    <option value="NumPoverty">Number in Poverty</option>
+                    <option value="MedianAge">Median Age</option>
+                    <option value="NumBachelors">Number of Bachelors</option>
+                    <option value="NumUnemployed">Number of Unemployed</option>
+
+                </select>
+		<h5 class="select-text"> FROM </h5>
+		<select id="from-selector">
+                    <option value="State">States</option>
+                    <option value="County">Counties</option>
+                    <option value="City">Capitals</option>
+                </select>
+		<h5 class="select-text"> WHERE </h5>
+		<select id="where-selector">
+                    <option value="Population">Population</option>
+                    <option value="MedianIncome">Median Income</option>
+                    <option value="MedianAge">Median Age</option>
+                    <option value="PercentDegrees">Percent of People with Degrees</option>
+                    <option value="PercentPoverty">Percent of People living in Poverty</option>
+                    <option value="PercentMinorities">Percent of Minorities</option>
+                </select>
+		<select id="math-selector">
+			<option value="<">Less Than </option>
+			<option value=">">Greater Than </option>
+			<option value="=">Equals </option>
+		</select>
+
+		<form action="" method="POST">
+			<input type="text" id="num-input" name="num" value=5000000>
+		</form>
+		
+        </div>
+
+		<a href="javascript:;" onclick="submitQuery()" class="myButton">Submit</a>
+	<div id="query-answer"></div>
+
+
+</body>
+</html>
+
+

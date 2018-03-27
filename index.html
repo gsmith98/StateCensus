@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="https://cdn.rawgit.com/uscensusbureau/citysdk/Release1.1/js/citysdk.js"></script>
+    <script src="https://cdn.rawgit.com/uscensusbureau/citysdk/Release1.1/js/citysdk.census.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+	<div class="block">
+		<div id="state-output" class="output"></div>
+
+		<form action="query.php" method="post">
+			<input id="state-text" type="text" name="querytext"><br>
+		<input type="button" id="load-state" value="Load" onclick="submitState();">
+                <input type="submit" value="Save">
+		</form>
+	</div>
+
+	<div class="block">
+		<div id="county-output"></div>
+		<form action="query.php" method="post">
+			<input id="county-text" type="text" name="querytext"><br>
+		<input type="button" id="load-county" value="Load" onclick="submitCounty();">
+		<input type="submit" value="County Data">
+		</form>
+
+	</div>
+
+	<div class="block">
+		<div id="city-output"></div>
+		<form action="query.php" method="post">
+			<input id="city-text" type="text" name="querytext"><br>
+		<input type="button" id="load-city" value="Load" onclick="submitCity();">
+		<input type="submit" value="City Data">
+		</form>
+
+	</div>
+
+</body>
+</html>
